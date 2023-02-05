@@ -7,7 +7,6 @@ metadata:
     app.kubernetes.io/instance: mediawiki
     app.kubernetes.io/name: php
   name: mediawiki
-  namespace: mediawiki
 spec:
   failedBuildsHistoryLimit: 5
   nodeSelector: null

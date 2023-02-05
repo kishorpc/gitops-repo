@@ -7,7 +7,6 @@ metadata:
     app.kubernetes.io/instance: postgresql
     app.kubernetes.io/name: postgresql
   name: postgresql
-  namespace: mediawiki
 spec:
   ports:
   - name: 5432-tcp

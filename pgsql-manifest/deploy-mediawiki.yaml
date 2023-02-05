@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mediawiki
+    app.kubernetes.io/component: mediawiki
+    app.kubernetes.io/instance: mediawiki
+    app.kubernetes.io/name: php
+  name: mediawiki
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      deployment: mediawiki
+  template:
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftNewApp
+      labels:
+        deployment: mediawiki
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/mediawiki/mediawiki@sha256:f0ada6849bc58ea7578353c1cf39242b0c1e10cd9538f660c647e33332080050
+        imagePullPolicy: IfNotPresent
+        name: mediawiki
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        - containerPort: 8443
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

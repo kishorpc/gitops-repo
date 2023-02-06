@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: pgsql-manifest
-    repoURL: 'https://github.com/kishorpc/mediawiki-gitops.git'
+    repoURL: 'https://github.com/kishorpc/gitops-repo.git'
     targetRevision: master
   syncPolicy:
     automated:

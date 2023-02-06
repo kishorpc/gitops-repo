@@ -4,11 +4,12 @@ metadata:
   labels:
     app: mediawiki
     app.kubernetes.io/component: mediawiki
-    app.kubernetes.io/instance: frontend
+    app.kubernetes.io/instance: latest
     app.kubernetes.io/name: php
   name: mediawiki
+  namespace: mediawiki-gitops
 spec:
-  host: mediawiki.kishor-gitops-poc-ba8e38d4c011d627379af1a4280c4e35-0000.us-south.containers.appdomain.cloud
+  host: mediawiki-mediawiki-gitops.ocpcluster-5bde58e3d6d567e3c92634c0d6b4f48b-0000.sng01.containers.appdomain.cloud
   port:
     targetPort: 8080-tcp
   to:

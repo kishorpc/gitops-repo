@@ -2,6 +2,8 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: mediawikihpa
+  labels:
+    app.kubernetes.io/instance: frontend
 spec:
   maxReplicas: 3
   metrics:

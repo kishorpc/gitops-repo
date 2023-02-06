@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: app-manifest
+    path: pgsql-manifest
     repoURL: 'https://github.com/kishorpc/mediawiki-gitops.git'
     targetRevision: master
   syncPolicy:

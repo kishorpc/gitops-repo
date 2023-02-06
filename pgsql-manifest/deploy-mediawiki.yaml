@@ -20,6 +20,10 @@ spec:
       labels:
         deployment: mediawiki
     spec:
+      volumes:
+        - name: pgsql-storage
+          persistentVolumeClaim:
+            claimName: pgsql-pv-claim
       containers:
       - image: image-registry.openshift-image-registry.svc:5000/mediawiki-gitops/mediawiki
         imagePullPolicy: IfNotPresent
@@ -30,6 +34,9 @@ spec:
         - containerPort: 8443
           protocol: TCP
         resources: {}
+        volumeMounts:
+            - name: pgsql-storage
+              mountPath: /var/lib/mediawiki/data
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst

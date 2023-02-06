@@ -21,7 +21,7 @@ spec:
         deployment: mediawiki
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/mediawiki/mediawiki@sha256:f0ada6849bc58ea7578353c1cf39242b0c1e10cd9538f660c647e33332080050
+      - image: image-registry.openshift-image-registry.svc:5000/mediawiki-gitops/mediawiki
         imagePullPolicy: IfNotPresent
         name: mediawiki
         ports:

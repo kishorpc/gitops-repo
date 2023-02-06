@@ -35,7 +35,7 @@ spec:
           value: passwd
         - name: POSTGRESQL_USER
           value: wikiuser
-        image: image-registry.openshift-image-registry.svc:5000/openshift/postgresq
+        image: image-registry.openshift-image-registry.svc:5000/openshift/postgresql
         imagePullPolicy: IfNotPresent
         name: postgresql
         ports:
